@@ -1,0 +1,326 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<title>JavaScriptじゃんけん</title>
+</head>
+
+<body>
+※Firefox推奨です<br><br>
+<script>
+function ooo() {
+	setTimeout('
+ 	document.write('<img src="scissors.png">');
+	document.write('<from><input type="button" value="アーい2" onclick="ooo()">');
+	' , 5000 );
+ }
+</script>
+<from>
+<input type="button" value="あーい" onclick="ooo()">
+</font>
+
+<h1>あなたの年齢を占いますVer.1</h1>
+当たる確率は約1%！！<br>
+Let's 占い→
+
+<script>
+function howold() {
+document.write("あなたは");
+document.write(Math.floor(101*Math.random()));
+document.write("歳です　※ページを更新してください"); }
+</script>
+
+
+<from>
+<input type="button" value="何歳？" onclick="howold()">
+</from><br>
+
+<h1>あなたの年齢を占いますVer.2</h1>
+当たる確率は約1%！！<br>
+Let's 占い→
+
+<script>
+function howold2() {
+var age = Math.floor(101*Math.random());
+alert("あなたは"+age+"歳です"); }
+</script>
+
+<from>
+<input type="button" value="何歳？" onclick="howold2()">
+</from><br>
+
+<h1>あなたの年齢を占いますVer.1.1</h1>
+当たる確率は約1%！！<br>
+Let's 占い→
+
+<script>
+function howold11() {
+document.write("あなたは");
+document.write(Math.floor(101*Math.random()));
+document.write("歳です");
+document.write('<input type="button" value="もどる" onclick="location.reload()">'); }
+</script>
+
+
+<from>
+<input type="button" value="何歳？" onclick="howold11()">
+</from><br><br><br><br>
+
+<h1>じゃんけん</h1>
+<h2>遊び方</h2>
+１．"グー""チョキ""パー"から自分の手を選ぶ(何回でも選びなおせます)<br>
+２．"READY"をクリックして戦闘準備！！<br>
+３．"FIGHT"をクリックして戦う<br><br>
+
+<script>
+function myselect(myhand) { 
+	if( myhand == 0 ) { 
+		mymyhand = 0
+		aihand = Math.floor(3*Math.random());
+		target = document.getElementById("LBfightman");
+		target.className = ""
+		target = document.getElementById("LSfightman");
+		target.className = "pail"
+		target = document.getElementById("LPfightman");
+		target.className = "pail"
+		target = document.getElementById("LUfightman");
+		target.className = "pail"; 
+	}
+	else if( myhand == 1 ) { 
+		mymyhand = 1 ;
+		aihand = Math.floor(3*Math.random());
+		target = document.getElementById("LBfightman");
+		target.className = "pail"
+		target = document.getElementById("LSfightman");
+		target.className = ""
+		target = document.getElementById("LPfightman");
+		target.className = "pail"
+		target = document.getElementById("LUfightman");
+		target.className = "pail"; 
+	}
+	else { 
+		mymyhand = 2 ;
+		aihand = Math.floor(3*Math.random());
+		target = document.getElementById("LBfightman");
+		target.className = "pail"
+		target = document.getElementById("LSfightman");
+		target.className = "pail"
+		target = document.getElementById("LPfightman");
+		target.className = ""
+		target = document.getElementById("LUfightman");
+		target.className = "pail"; 
+	}
+}
+
+function aiselect() { 
+	if( aihand == 0 ) { 
+		target = document.getElementById("RBfightman");
+		target.className = ""
+		target = document.getElementById("RSfightman");
+		target.className = "pail"
+		target = document.getElementById("RPfightman");
+		target.className = "pail"
+		target = document.getElementById("RUfightman");
+		target.className = "pail"; 
+	}
+	else if( aihand == 1 ) {
+		target = document.getElementById("RBfightman");
+		target.className = "pail"
+		target = document.getElementById("RSfightman");
+		target.className = ""
+		target = document.getElementById("RPfightman");
+		target.className = "pail"
+		target = document.getElementById("RUfightman");
+		target.className = "pail"; 
+	}
+	else {
+		target = document.getElementById("RBfightman");
+		target.className = "pail"
+		target = document.getElementById("RSfightman");
+		target.className = "pail"
+		target = document.getElementById("RPfightman");
+		target.className = ""
+		target = document.getElementById("RUfightman");
+		target.className = "pail"; 
+	}
+
+
+	if( mymyhand  == 0 ) {
+		target = document.getElementById("LBfightman");
+			target.className = "Lcenter";
+	}
+	else if( mymyhand == 1 ) {
+		target = document.getElementById("LSfightman");
+			target.className = "Lcenter";
+	}
+	else {
+		target = document.getElementById("LPfightman");
+			target.className = "Lcenter";
+	}
+	if( aihand == 0 ) {
+		target = document.getElementById("RBfightman");
+			target.className = "Rcenter";
+	}
+	else if( aihand == 1 ) {
+		target = document.getElementById("RSfightman");
+			target.className = "Rcenter";
+	}
+	else {
+		target = document.getElementById("RPfightman");
+			target.className = "Rcenter";
+	}
+}
+
+function fight() {
+	if( mymyhand == 0 ) {
+		if( aihand == 0 ) {
+			result = "あいこ";
+		}
+		else if( aihand == 1 ) {
+			result = "かち";
+			target = document.getElementById("RSfightman");
+				target.className = "Rdamaged";
+		}
+		else if( aihand == 2 ) {
+			result = "まけ";
+			target = document.getElementById("LBfightman");
+				target.className = "Ldamaged";
+		}
+	}
+	else if( mymyhand == 1 ) {
+		if( aihand == 0 ) {
+			result = "まけ";
+			target = document.getElementById("LSfightman");
+				target.className = "Ldamaged";
+		}
+		else if( aihand == 1 ) {
+			result = "あいこ";
+		}
+		else {
+			result = "かち";
+			target = document.getElementById("RPfightman");
+				target.className = "Rdamaged";
+		}
+	}
+	else {
+		if( aihand == 0 ) {
+			result = "かち";
+			target = document.getElementById("RBfightman");
+				target.className = "Rdamaged";
+		}
+		else if( aihand == 1 ) {
+			result = "まけ";
+			target = document.getElementById("LPfightman");
+				target.className = "Ldamaged";
+		}
+		else {
+			result = "あいこ";
+		}
+	}
+	alert(result);
+}	
+
+
+</script>
+
+<img src="block.png" id="LBfightman" class="pail">
+<img src="scissors.png" id="LSfightman" class="pail">
+<img src="paper.png" id="LPfightman" class="pail">
+<img src="unknown.png" id="LUfightman">
+<img src="block.png" id="RBfightman" class="pail">
+<img src="scissors.png" id="RSfightman" class="pail">
+<img src="paper.png" id="RPfightman" class="pail"><br>
+<img src="unknown.png" id="RUfightman">
+<br><br><br><br><br>
+
+<font>
+<input type="button" value="グー" onclick="myselect(0)">
+<input type="button" value="チョキ" onclick="myselect(1)">
+<input type="button" value="パー" onclick="myselect(2)">
+<input type="button" value="READY" onclick="aiselect()">
+<input type="button" value="FIGHT" onclick="fight()">
+<input type="button" value="もどす" onclick="location.reload()">
+</font><br><br>
+
+
+<h1>じゃんけん(簡単化Ver)</h1>
+<h2>遊び方</h2>
+"ぐー""ちょき""ぱー"から自分の手を選ぶだけ<br>
+
+<script>
+function janken(myhand) {
+	var hand = ["ぐー","ちょき","ぱー"];
+	aihand = Math.floor(3*Math.random());
+	result = "";
+	number = myhand - aihand;
+	if(number == 0 ) {
+		result = "あいこ";
+	}
+	else if(number == -1 ) {
+		result = "かち";
+	}
+	else if(number == 2 ) {
+		result = "かち";
+	}
+	else {
+		result = "まけ";
+	}
+	
+alert("自分の手:"+hand[myhand]+"\n相手の手: "+hand[aihand]+"\n結果: "+result);
+}
+</script>
+
+<from>
+<input type="button" value="ぐー" onclick="janken(0)">
+<input type="button" value="ちょき" onclick="janken(1)">
+<input type="button" value="ぱー" onclick="janken(2)">
+</from>
+<br><br>
+
+<h1>じゃんけん？(超簡単化Ver)</h1>
+<h2>遊び方</h2>
+"ぐー""ちょき""ぱー"から自分の手を選ぶだけ<p>実はどれ選んでも一緒</p>
+<script>
+function jankenkan() {
+	number = Math.floor(3*Math.random());
+	if(number == 0 ) {
+		result = "かち";
+	}
+	else if(number == 1 ) {
+		result = "あいこ";
+	}
+	else {
+		result = "まけ";
+	}
+	alert(result);
+}
+</script>
+
+<from>
+<input type="button" value="ぐー" onclick="jankenkan()">
+<input type="button" value="ちょき" onclick="jankenkan()">
+<input type="button" value="ぱー" onclick="jankenkan()">
+</from>
+
+<br><br><br>
+<img src="block.png" id="movetest" >
+
+<script>
+function move() {
+	target = 
+document.getElementById("movetest");
+	if(target.className == null || target.className == "") {
+		target.className = "start";}
+	else {
+		target.className = ""; }
+	}
+</script>
+
+<from>
+<input type="button" value="動かす" onclick="move()">
+</from>
+
+
+</body>
+
+</html>
