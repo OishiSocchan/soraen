@@ -1,0 +1,118 @@
+@charset "utf-8";
+body { color: #000 ; }
+
+p {
+	font-size: 10px;
+	}
+
+#movetest {
+	height: 100px;
+	width: 100px;
+	background-color: #ddd;
+	position: relative;
+	left: 0 ;
+	transition: 2.5s;
+	}
+#movetest.start {
+	opacity: 0.5;
+	left: calc( 100% - 100px);
+	}
+
+#LBfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	transition: 2.5s;
+	}
+#LSfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	transition: 2.5s;
+	}
+#LPfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	transition: 2.5s;
+	}
+#LUfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	transition: 2.5s;
+	}
+
+#RBfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	left: calc( 100% - 100px);
+	transition: 2.5s;
+	}
+#RSfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	left: calc( 100% - 100px);
+	transition: 2.5s;
+	}
+#RPfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	left: calc( 100% - 100px);
+	transition: 2.5s;
+	}
+#RUfightman {
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	left: calc( 100% - 100px);
+	}
+
+.pail {
+	opacity: 0 ;
+	}
+
+#LBfightman.Lcenter {
+	left: calc( 40% - 100px );
+	}
+#LSfightman.Lcenter {
+	left: calc( 40% - 100px );
+	}
+#LPfightman.Lcenter {
+	left: calc( 40% - 100px );
+	}
+#RBfightman.Rcenter {
+	left: calc( 60% - 100px );
+	}
+#RSfightman.Rcenter {
+	left: calc( 60% - 100px );
+	}
+#RPfightman.Rcenter {
+	left: calc( 60% - 100px );
+	}
+
+.Ldamaged {
+	transform: rotate( -450deg );
+	}
+.Rdamaged {
+	transform: rotate( 450deg );
+	}
+
+	
+
+
+
+
+
+
